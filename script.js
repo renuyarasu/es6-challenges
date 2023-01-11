@@ -8,12 +8,10 @@ Change contents of the isNumber function
 using ternary operator. */
 
 function isNum(a) {
-    if (typeof a === 'number') {
-        return 'Number'
-    } else {
-        return 'Not a Number'
-    }
+    return typeof a === 'number' ? 'Number' : 'Not a Number';
 }
+
+
 console.log(isNum(10)); // Number
 console.log(isNum(NaN)); // Number
 console.log(isNum('Number')); // Not a Number
