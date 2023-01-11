@@ -2,21 +2,22 @@
 "use strict"
 console.clear();
 
-/* CHALLENGE 8 - Check presence of the function parameters
-Throw Error when function square() is called
-without arguments.
+/* CHALLENGE 9 - Object Destructuring
 
-Create new function and use it as default parameter.*/
+Declare mult() function that will multiply values
+of the x, y, z fields of the passed object.*/
 
-function missingArg() {
-    throw new Error('Function square requires an argument!')
+var num = {
+    x: 10,
+    y: 20,
+    z: 30
 }
-
-function square(a = missingArg()) {
-    console.log(a * a);
+/* 
+function mult(obj) {
+    let { x, y, z } = obj;
+    return x * y * z;
 }
+ */
+let mult = ({ x, y, z }) => x * y * z;
 
-square(10)
-square(20)
-square(32)
-square()
+console.log(mult(num)); //6000
