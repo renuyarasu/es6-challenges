@@ -2,24 +2,22 @@
 
 "use strict"
 console.clear();
+/* CHALLENGE 7 - Default parameters
 
-/* CHALLENGE 6 - Arrow Functions
+Answer following question:
+1. Why on the line 14 we can't simply use following statement:
+mult = mult || 2;
 
-Use arrow functions instead of functions
-where possible.*/
+Set default value of the mult parameter
+in the multiplyBy() function.*/
 
-/* function multiply(a, b) {
-    return a * b;
-} */
+function multiplyBy(a, mult = 2) {
+    console.log(a * mult);
+}
 
-let multiply = (a, b) => a * b;
-
-setTimeout(function () {
-    console.log(multiply(10, 20));
-}, 1000)
-
-setTimeout(function () {
-    console.log(multiply(1, 2));
-}, 0)
-
-setTimeout(() =>  console.log(multiply(3, 3)), 5000)
+multiplyBy(2);
+multiplyBy(2, undefined);
+multiplyBy(2, null);
+multiplyBy(2, NaN);
+multiplyBy(2, 10);
+multiplyBy(5, 25);
