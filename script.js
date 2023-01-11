@@ -3,15 +3,20 @@
 "use strict"
 console.clear();
 
-/* CHALLENGE 3 - Let
+/* CHALLENGE 4 - Hoisting
 
-Change code to match output.
+Change code to fix first error after the line 15.
+Error after the line 20 should still be generated.
 */
 
-var i = 10;
 
-for (let i = 0; i <= 5; i++) {
-    console.log(i);
+var a = 5;
+var b = 10;
+
+if (b > a) {
+    let c = 15;
+    c = a + b + c
+    console.log(c);
 }
 
-console.log(i);
+console.log(c);
