@@ -1,23 +1,22 @@
 // JavaScript and ES6 Challenges - Do you know JavaScript - Created by Bogdan Stashchuk
-
 "use strict"
 console.clear();
-/* CHALLENGE 7 - Default parameters
 
-Answer following question:
-1. Why on the line 14 we can't simply use following statement:
-mult = mult || 2;
+/* CHALLENGE 8 - Check presence of the function parameters
+Throw Error when function square() is called
+without arguments.
 
-Set default value of the mult parameter
-in the multiplyBy() function.*/
+Create new function and use it as default parameter.*/
 
-function multiplyBy(a, mult = 2) {
-    console.log(a * mult);
+function missingArg() {
+    throw new Error('Function square requires an argument!')
 }
 
-multiplyBy(2);
-multiplyBy(2, undefined);
-multiplyBy(2, null);
-multiplyBy(2, NaN);
-multiplyBy(2, 10);
-multiplyBy(5, 25);
+function square(a = missingArg()) {
+    console.log(a * a);
+}
+
+square(10)
+square(20)
+square(32)
+square()
