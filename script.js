@@ -3,20 +3,20 @@
 "use strict"
 console.clear();
 
-/* CHALLENGE 4 - Hoisting
+/* CHALLENGE 5 - Ternary Operator
+Change contents of the isNumber function
+using ternary operator. */
 
-Change code to fix first error after the line 15.
-Error after the line 20 should still be generated.
-*/
-
-
-var a = 5;
-var b = 10;
-
-if (b > a) {
-    let c = 15;
-    c = a + b + c
-    console.log(c);
+function isNum(a) {
+    if (typeof a === 'number') {
+        return 'Number'
+    } else {
+        return 'Not a Number'
+    }
 }
-
-console.log(c);
+console.log(isNum(10)); // Number
+console.log(isNum(NaN)); // Number
+console.log(isNum('Number')); // Not a Number
+console.log(isNum(true)); // Not a Number
+console.log(isNum(null)); // Not a Number
+console.log(isNum(undefined)); // Not a Number
