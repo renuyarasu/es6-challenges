@@ -6,12 +6,11 @@ console.clear();
 Assign values to the a, b, c variables
 using destructuring and rest operator.*/
 
+var a, b, c, d, arr;
+a = [1, 2];
+b = [3, 4];
+c = [8, 9, 10];
+d = 11;
 
-var a, b, c;
-var arr = [1, 2, 3, 4, 5, 6];
-
-
-[a, b, ...c] = arr;
-
-console.log(a, b, c);
-console.log(c);
+arr = [...a, ...b, 5, 6, 7, ...c, d]
+console.log(arr);
