@@ -1,23 +1,17 @@
 // JavaScript and ES6 Challenges - Do you know JavaScript - Created by Bogdan Stashchuk
 "use strict"
 console.clear();
+/* CHALLENGE 10 - Destructuring and Rest Operator
 
-/* CHALLENGE 9 - Object Destructuring
+Assign values to the a, b, c variables
+using destructuring and rest operator.*/
 
-Declare mult() function that will multiply values
-of the x, y, z fields of the passed object.*/
 
-var num = {
-    x: 10,
-    y: 20,
-    z: 30
-}
-/* 
-function mult(obj) {
-    let { x, y, z } = obj;
-    return x * y * z;
-}
- */
-let mult = ({ x, y, z }) => x * y * z;
+var a, b, c;
+var arr = [1, 2, 3, 4, 5, 6];
 
-console.log(mult(num)); //6000
+
+[a, b, ...c] = arr;
+
+console.log(a, b, c);
+console.log(c);
