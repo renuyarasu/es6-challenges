@@ -3,19 +3,18 @@
 "use strict"
 console.clear();
 
-/*
-Create a function sum() that will sum all arguments passed to it. Quantity of the arguments is unknown.
-Use console.log() at the end of the sum() function to print result. Use ES6 whenever possible. */
+/* CHALLANGE 2 - Const
+Answer following Qustions:
+  1. Why no error is generated after the line 14?
+  2. Why after the line 19 TypeError is generated?
 
-function sum(...args) {
-    // console.log(args);
-    let total;
-    total = args.reduce((acc, ele) => acc + ele);
-    console.log(total);
-}
+Change one line of code so, that error will go away.
+Don't change lines 14, 19.
+*/
 
 
-sum(1, 2, 3)
-sum(1, 2, 3, 4, 5, 6)
-sum(1, 2, 3, 4, 5, 6, 7, 8, 9)
-
+const newArr = [1, 2, 3];
+newArr.push(4);
+console.log(newArr);
+newArr = [1, 2, 3, 4, 5];
+console.log(newArr);
