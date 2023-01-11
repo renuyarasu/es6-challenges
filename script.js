@@ -3,18 +3,23 @@
 "use strict"
 console.clear();
 
-/* CHALLENGE 5 - Ternary Operator
-Change contents of the isNumber function
-using ternary operator. */
+/* CHALLENGE 6 - Arrow Functions
 
-function isNum(a) {
-    return typeof a === 'number' ? 'Number' : 'Not a Number';
-}
+Use arrow functions instead of functions
+where possible.*/
 
+/* function multiply(a, b) {
+    return a * b;
+} */
 
-console.log(isNum(10)); // Number
-console.log(isNum(NaN)); // Number
-console.log(isNum('Number')); // Not a Number
-console.log(isNum(true)); // Not a Number
-console.log(isNum(null)); // Not a Number
-console.log(isNum(undefined)); // Not a Number
+let multiply = (a, b) => a * b;
+
+setTimeout(function () {
+    console.log(multiply(10, 20));
+}, 1000)
+
+setTimeout(function () {
+    console.log(multiply(1, 2));
+}, 0)
+
+setTimeout(() =>  console.log(multiply(3, 3)), 5000)
