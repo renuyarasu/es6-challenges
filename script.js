@@ -1,51 +1,17 @@
 // JavaScript and ES6 Challenges - Do you know JavaScript - Created by Bogdan Stashchuk
 "use strict"
 console.clear();
-/* CHALLENGE 14 - Object Destructuring
+/* CHALLENGE 15 - Iterate over String
 
-Create shortPerson() function that will destructure each person object.
-Sample result:
-{n: "Mike", c: "Spain", a: 23, p: 100}
+Count number of the lowercase vowel letters in the string.
+Vowel letters - a, e, i, o, u*/
 
-If input object doesn't have postsQuantity field
-it should get default value 0.*/
 
-var person_01 = {
-    name: 'VedaGna',
-    info: {
-        country: 'India',
-        age: 5
-    },
-    postsQuantity: 100
+var vowelsCount = 0;
+var vowels = ['a', 'e', 'i', 'o', 'u'];
+var str = 'Count number of the lowercase vowel letters in the string';
+
+for (let i = 0; i < str.length; i++) {
+    if (vowels.indexOf(str[i]) !== -1) vowelsCount++;
 }
-
-var person_02 = {
-    name: 'Gnapika',
-    info: {
-        country: 'India',
-        age: 8
-    }
-};
-
-function shortPerson(obj) {
-    var {
-        name: n,
-        info: {
-            country: c,
-            age: a
-        },
-        postsQuantity: p = 0
-
-    } = obj;
-    return {
-        n,
-        c,
-        a,
-        p
-    }
-}
-
-console.log(shortPerson(person_01));
-
-
-console.log(shortPerson(person_02));
+console.log(vowelsCount); //17
