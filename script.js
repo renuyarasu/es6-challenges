@@ -1,17 +1,14 @@
 // JavaScript and ES6 Challenges - Do you know JavaScript - Created by Bogdan Stashchuk
 "use strict"
 console.clear();
-/* CHALLENGE 15 - Iterate over String
+/* CHALLENGE 16 - Swap values of the two variables
 
-Count number of the lowercase vowel letters in the string.
-Vowel letters - a, e, i, o, u*/
+Swap values of the a and b.
+Don't use for this any new variable.*/
 
+let a = 'first';
+let b = 'second';
 
-var vowelsCount = 0;
-var vowels = ['a', 'e', 'i', 'o', 'u'];
-var str = 'Count number of the lowercase vowel letters in the string';
+[a, b] = [b, a] // destructuring arrays
 
-for (let i = 0; i < str.length; i++) {
-    if (vowels.includes(str[i])) vowelsCount++;
-}
-console.log(vowelsCount); //17
+console.log(a, b); // second first
