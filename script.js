@@ -1,26 +1,51 @@
 // JavaScript and ES6 Challenges - Do you know JavaScript - Created by Bogdan Stashchuk
 "use strict"
 console.clear();
-/* CHALLENGE 13 - Template Literals
+/* CHALLENGE 14 - Object Destructuring
 
-Create carInfo() function that
-will return info about each car.
+Create shortPerson() function that will destructure each person object.
+Sample result:
+{n: "Mike", c: "Spain", a: 23, p: 100}
 
-Car is considered cheap if it's price is <= 20000
-Car is considered expensive it it's price is > 20000 */
+If input object doesn't have postsQuantity field
+it should get default value 0.*/
 
-var cars = [
-    { brand: 'Honda', price: 13000 },
-    { brand: 'Rolls-Royce', price: 120000 }
-];
-
-function carInfo(car) {
-    let s;
-    s = (car.price <= 20000) ? 'cheep' : 'expensive'
-    /* if (car.price <= 20000) s = 'cheep'
-    else s = 'expensive' */
-
-    return `Price of my new ${car.brand} is ${car.price}$ and it is ${(car.price <= 20000) ? 'cheep' : 'expensive'} car.`
+var person_01 = {
+    name: 'VedaGna',
+    info: {
+        country: 'India',
+        age: 5
+    },
+    postsQuantity: 100
 }
 
-cars.forEach(car => console.log(carInfo(car))); 
+var person_02 = {
+    name: 'Gnapika',
+    info: {
+        country: 'India',
+        age: 8
+    }
+};
+
+function shortPerson(obj) {
+    var {
+        name: n,
+        info: {
+            country: c,
+            age: a
+        },
+        postsQuantity: p = 0
+
+    } = obj;
+    return {
+        n,
+        c,
+        a,
+        p
+    }
+}
+
+console.log(shortPerson(person_01));
+
+
+console.log(shortPerson(person_02));
