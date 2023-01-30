@@ -1,14 +1,36 @@
 // JavaScript and ES6 Challenges - Do you know JavaScript - Created by Bogdan Stashchuk
 "use strict"
 console.clear();
-/* CHALLENGE 16 - Swap values of the two variables
+/* CHALLENGE 17 - IIFE (Immediately Invoked Function Expression)
 
-Swap values of the a and b.
-Don't use for this any new variable.*/
+Complete IIFE that will expose following methods:
+  greet() - It will take one argument and return greeting string
+  changeGreeting() - It will change greeting string
 
-let a = 'first';
-let b = 'second';
+Initial greeting string "Hey, that's" must be defined inside IIFE.*/
 
-[a, b] = [b, a] // destructuring arrays
+let greeting = (() => {
+    let greetingString = "Hey that's";
 
-console.log(a, b); // second first
+    function greet(name) {
+        return `${greetingString} ${name}`
+    }
+
+    function changeGeet(newGreeting) {
+        greetingString = newGreeting
+    }
+
+    return {
+        greet, changeGeet
+    }
+
+})();
+
+
+
+console.log(greeting.greet('VedaGna'));
+
+
+console.log(greeting.changeGeet('Good Morning from'));
+
+console.log(greeting.greet('Gnapika'));
