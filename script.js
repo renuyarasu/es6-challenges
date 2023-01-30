@@ -12,6 +12,6 @@ var vowels = ['a', 'e', 'i', 'o', 'u'];
 var str = 'Count number of the lowercase vowel letters in the string';
 
 for (let i = 0; i < str.length; i++) {
-    if (vowels.indexOf(str[i]) !== -1) vowelsCount++;
+    if (vowels.includes(str[i])) vowelsCount++;
 }
 console.log(vowelsCount); //17
