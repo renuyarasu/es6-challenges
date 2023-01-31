@@ -17,7 +17,7 @@ function sumObjectValues(object) {
     let total = 0;
     // Object.prototype.new = 500;
     for (let k in object) {
-        if (typeof object[k] === 'number' && object.hasOwnProperty(k)) total += object[k];
+        if (typeof object[k] === 'number') total += object[k];
     }
     return total;
 }
