@@ -15,7 +15,7 @@ let nums = {
 }
 function sumObjectValues(object) {
     for (let k in object) {
-        console.log(k);
+        console.log([object[k]]);
     }
 }
 
