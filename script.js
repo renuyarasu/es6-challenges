@@ -1,36 +1,23 @@
 // JavaScript and ES6 Challenges - Do you know JavaScript - Created by Bogdan Stashchuk
 "use strict"
 console.clear();
-/* CHALLENGE 17 - IIFE (Immediately Invoked Function Expression)
 
-Complete IIFE that will expose following methods:
-  greet() - It will take one argument and return greeting string
-  changeGreeting() - It will change greeting string
+/* CHALLENGE 18 - Classes ~ Rewrite code below using ES6 Classes */
 
-Initial greeting string "Hey, that's" must be defined inside IIFE.*/
-
-let greeting = (() => {
-    let greetingString = "Hey that's";
-
-    function greet(name) {
-        return `${greetingString} ${name}`
-    }
-
-    function changeGeet(newGreeting) {
-        greetingString = newGreeting
-    }
-
-    return {
-        greet, changeGeet
-    }
-
-})();
+function Fruit(title, price) {
+    this.title = title;
+    this.price = price;
+}
 
 
+Fruit.prototype.priceInfo = function () {
+    return `Price of the ${this.title} is ${this.price}₹`
+}
 
-console.log(greeting.greet('VedaGna'));
+
+let apple = new Fruit('Apple', 25);
+console.log(apple.priceInfo());
 
 
-console.log(greeting.changeGeet('Good Morning from'));
-
-console.log(greeting.greet('Gnapika'));
+let banana = new Fruit('Banana', 10);
+console.log(banana.priceInfo());
