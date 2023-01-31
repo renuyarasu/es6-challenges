@@ -12,12 +12,14 @@ It should return an object like this:
 
 let nums = [10, 20, 30, 40, 50, -10, -20, -30, -40, -50];
 
+
 function sumPlusMinus(arr) {
-    return arr.reduce((acc, ele) => {
-        return {
-            plus: ele > 0 ? acc.plus + ele : acc.plus,
-            minus: ele < 0 ? acc.minus + ele : acc.minus,
-        }
-    }, { plus: 0, minus: 0 })
+    return arr.reduce((acc, ele) => ({
+        plus: ele > 0 ? acc.plus + ele : acc.plus,
+        minus: ele < 0 ? acc.minus + ele : acc.minus
+
+    }
+    ), { plus: 0, minus: 0 })
 }
+
 console.log(sumPlusMinus(nums));
