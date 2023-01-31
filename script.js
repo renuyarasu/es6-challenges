@@ -14,9 +14,12 @@ let nums = {
     d: 30,
 }
 function sumObjectValues(object) {
+    let total = 0;
+    // Object.prototype.new = 500;
     for (let k in object) {
-        console.log([object[k]]);
+        if (typeof object[k] === 'number' && object.hasOwnProperty(k)) total += object[k];
     }
+    return total;
 }
 
-console.log(sumObjectValues(nums));
+console.log(sumObjectValues(nums)); // 60
