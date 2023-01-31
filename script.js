@@ -2,24 +2,22 @@
 "use strict"
 console.clear();
 
-/* CHALLENGE 19 - Iterate over Object
-Create a function sumObjectValues() that will sum all values
-of the fields that contain numbers.
-Ensure that iteration is done only over own properties of the object. */
+/* CHALLENGE 20 - Sum positive and negative numbers
+Create a function sumPlusMinus() that takes array and sums separately positive and negative numbers.
+It should return an object like this:
+{
+  plus: 74, // sum of all positive numbers
+  minus: -54 // sum of all negative numbers}
+*/
 
-let nums = {
-    a: 10,
-    b: 20,
-    c: 'VedGna',
-    d: 30,
-}
-function sumObjectValues(object) {
-    let total = 0;
-    // Object.prototype.new = 500;
-    for (let k in object) {
-        if (typeof object[k] === 'number') total += object[k];
-    }
-    return total;
-}
+let nums = [10, 20, 30, 40, 50, -10, -20, -30, -40, -50];
 
-console.log(sumObjectValues(nums)); // 60
+function sumPlusMinus(arr) {
+    return arr.reduce((acc, ele) => {
+        return {
+            plus: ele > 0 ? acc.plus + ele : acc.plus,
+            minus: ele < 0 ? acc.minus + ele : acc.minus,
+        }
+    }, { plus: 0, minus: 0 })
+}
+console.log(sumPlusMinus(nums));
